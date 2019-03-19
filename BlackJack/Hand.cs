@@ -36,5 +36,23 @@ namespace BlackJack
                 hand.Add(c);
             }
         }
+         // gets the number of cards in the hand
+        public int getCardCount() 
+        {        
+            return hand.Count();
+        }
+
+         public Card getCard(int position) {
+          // Get the card from the hand in given position, where positions
+          // are numbered starting from 0.  If the specified position is
+          // not the position number of a card in the hand, then null
+          // is returned.
+            if (position >= 0 && position < hand.size())
+            {
+                return (Card)hand.elementAt(position);
+            }
+            else
+                return null;
+            }
     }
 }
