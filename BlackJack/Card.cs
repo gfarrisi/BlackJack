@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace BlackJack
 {
+    //second test comment
     // represents one of the 52 cards in a deck of playing cards
     // each card has a suit and a value
     class Card
