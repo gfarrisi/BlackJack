@@ -47,9 +47,10 @@ namespace BlackJack
           // are numbered starting from 0.  If the specified position is
           // not the position number of a card in the hand, then null
           // is returned.
-            if (position >= 0 && position < hand.size())
+            if (position >= 0 && position < hand.Count())
             {
-                return (Card)hand.elementAt(position);
+                //return (Card)hand.elementAt(position);
+                return hand.ElementAt(0);
             }
             else
                 return null;
