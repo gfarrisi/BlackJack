@@ -15,3 +15,6 @@ C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\obj\Debug\BlackJack.csp
 C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\obj\Debug\BlackJack.csproj.CoreCompileInputs.cache
 C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\obj\Debug\BlackJack.exe
 C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\obj\Debug\BlackJack.pdb
+C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\bin\Debug\BlackJack.exe.config
+C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\bin\Debug\BlackJack.exe
+C:\Users\gabri\Source\Repos\gfarrisi\BlackJack\BlackJack\bin\Debug\BlackJack.pdb
