@@ -67,7 +67,7 @@ namespace BlackJack
 
             Card dealerCard2 = deck.dealCard();
             dealerHand.addCard(dealerCard2);
-            txtDealerCard2.Text = dealerCard1.toString();
+            txtDealerCard2.Text = dealerCard2.toString();
 
             Card playerCard1 = deck.dealCard();
             playerHand.addCard(playerCard1);

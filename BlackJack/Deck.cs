@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace BlackJack
 {
@@ -41,9 +42,31 @@ namespace BlackJack
                 Card temp = deck[i];
                 deck[i] = deck[rand];
                 deck[rand] = temp;
+                //MessageBox.Show(rand.ToString());
             }
+            for (int i = 51; i > 0; i--)
+            {
+                Random rnd = new Random();
+                int rand = rnd.Next(52);
+
+                //swapping the given index value with a random index value
+                Card temp = deck[i];
+                deck[i] = deck[rand];
+                deck[rand] = temp;
+              //MessageBox.Show(rand.ToString());
+            }
+
+
             //resetting the cards used back to zero because it refreshes the usage
             cardsUsed = 0;
+
+            
+            StringBuilder cards = new StringBuilder("");
+            foreach (Card c in deck)
+            {
+                cards.Append(c.toString() + "\n ");
+            }
+            MessageBox.Show(cards.ToString());
         }
 
         public int cardsLeft()
