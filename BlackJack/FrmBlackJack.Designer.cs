@@ -143,6 +143,7 @@
             this.pnlDealerCards.Name = "pnlDealerCards";
             this.pnlDealerCards.Size = new System.Drawing.Size(395, 266);
             this.pnlDealerCards.TabIndex = 9;
+            this.pnlDealerCards.Visible = false;
             // 
             // pnlPlayerCards
             // 
@@ -153,6 +154,7 @@
             this.pnlPlayerCards.Name = "pnlPlayerCards";
             this.pnlPlayerCards.Size = new System.Drawing.Size(395, 266);
             this.pnlPlayerCards.TabIndex = 10;
+            this.pnlPlayerCards.Visible = false;
             // 
             // dealerCard1
             // 
@@ -164,44 +166,44 @@
             // 
             // txtDealerCard1
             // 
-            this.txtDealerCard1.Location = new System.Drawing.Point(19, 27);
+            this.txtDealerCard1.Location = new System.Drawing.Point(78, 27);
             this.txtDealerCard1.Name = "txtDealerCard1";
-            this.txtDealerCard1.Size = new System.Drawing.Size(93, 26);
+            this.txtDealerCard1.Size = new System.Drawing.Size(221, 26);
             this.txtDealerCard1.TabIndex = 1;
             // 
             // txtDealerCard2
             // 
-            this.txtDealerCard2.Location = new System.Drawing.Point(144, 27);
+            this.txtDealerCard2.Location = new System.Drawing.Point(86, 75);
             this.txtDealerCard2.Name = "txtDealerCard2";
-            this.txtDealerCard2.Size = new System.Drawing.Size(93, 26);
+            this.txtDealerCard2.Size = new System.Drawing.Size(213, 26);
             this.txtDealerCard2.TabIndex = 2;
             // 
             // txtDealerCard3
             // 
-            this.txtDealerCard3.Location = new System.Drawing.Point(270, 27);
+            this.txtDealerCard3.Location = new System.Drawing.Point(88, 129);
             this.txtDealerCard3.Name = "txtDealerCard3";
-            this.txtDealerCard3.Size = new System.Drawing.Size(93, 26);
+            this.txtDealerCard3.Size = new System.Drawing.Size(211, 26);
             this.txtDealerCard3.TabIndex = 3;
             // 
             // txtPlayerCard1
             // 
-            this.txtPlayerCard1.Location = new System.Drawing.Point(28, 27);
+            this.txtPlayerCard1.Location = new System.Drawing.Point(81, 27);
             this.txtPlayerCard1.Name = "txtPlayerCard1";
-            this.txtPlayerCard1.Size = new System.Drawing.Size(93, 26);
+            this.txtPlayerCard1.Size = new System.Drawing.Size(217, 26);
             this.txtPlayerCard1.TabIndex = 3;
             // 
             // txtPlayerCard2
             // 
-            this.txtPlayerCard2.Location = new System.Drawing.Point(151, 27);
+            this.txtPlayerCard2.Location = new System.Drawing.Point(81, 75);
             this.txtPlayerCard2.Name = "txtPlayerCard2";
-            this.txtPlayerCard2.Size = new System.Drawing.Size(93, 26);
+            this.txtPlayerCard2.Size = new System.Drawing.Size(217, 26);
             this.txtPlayerCard2.TabIndex = 4;
             // 
             // txtPlayerCard3
             // 
-            this.txtPlayerCard3.Location = new System.Drawing.Point(273, 27);
+            this.txtPlayerCard3.Location = new System.Drawing.Point(81, 129);
             this.txtPlayerCard3.Name = "txtPlayerCard3";
-            this.txtPlayerCard3.Size = new System.Drawing.Size(93, 26);
+            this.txtPlayerCard3.Size = new System.Drawing.Size(217, 26);
             this.txtPlayerCard3.TabIndex = 5;
             // 
             // FrmBlackJack

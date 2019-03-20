@@ -31,14 +31,16 @@ namespace BlackJack
         }
 
         //adds a card to the hand list
-        public void addCard(Card c)
+        public Card addCard(Card c)
         {           
             if (c != null)
             {
                 hand.Add(c);
+                return c;
             }
+            return null;
         }
-         // gets the number of cards in the hand
+        // gets the number of cards in the hand
         public int getCardCount() 
         {        
             return hand.Count();
