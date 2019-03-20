@@ -35,7 +35,8 @@ namespace BlackJack
             for (int i = 51; i > 0; i--)
             {
                 Random rnd = new Random();
-                int rand = (rnd.Next()* (i+1));
+                int rand = rnd.Next(52);
+
                 //swapping the given index value with a random index value
                 Card temp = deck[i];
                 deck[i] = deck[rand];

@@ -35,7 +35,7 @@ namespace BlackJack
                 {
                     containsAce = true;     // There is at least one ace.
                 }
-                handValue = handValue + cardVal;
+                handValue += cardVal;
             }
 
             // Now, val is the value of the hand, counting any ace as 1.
