@@ -197,6 +197,9 @@ namespace BlackJack
 
         }  // end playBlackjack()
 
+        private void btnHit_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
