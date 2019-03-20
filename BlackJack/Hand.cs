@@ -44,18 +44,24 @@ namespace BlackJack
             return hand.Count();
         }
 
-         public Card getCard(int position) {
-          // Get the card from the hand in given position, where positions
-          // are numbered starting from 0.  If the specified position is
-          // not the position number of a card in the hand, then null
-          // is returned.
+        public Card getCard(int position)
+        {
+            // Get the card from the hand in given position, where positions
+            // are numbered starting from 0.  If the specified position is
+            // not the position number of a card in the hand, then null
+            // is returned.
             if (position >= 0 && position < hand.Count())
             {
                 //return (Card)hand.elementAt(position);
-                return hand.ElementAt(0);
+                return hand.ElementAt(position);
             }
             else
+            {
                 return null;
             }
+        }
+
+        //sort by value
+        //sort by suit
     }
 }
