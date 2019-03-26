@@ -86,6 +86,10 @@ namespace BlackJack
             return getValueAsString() + " of " + getSuitAsString();
         }
 
+        public String imageString()
+        {
+            return "suit" + getSuit().ToString() + "value" + getValue().ToString();
+        }
 
     }
 }
