@@ -5,7 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BlackJack
@@ -15,6 +15,9 @@ namespace BlackJack
         Deck deck;
         BlackJackHand dealerHand;
         BlackJackHand playerHand;
+
+        private Boolean dealerWins = false;
+        private Boolean playerWins = false;
 
         public FrmBlackJack()
         {
@@ -45,10 +48,8 @@ namespace BlackJack
                 lblPlayer.Text = txtName.Text;
                 txtName.Enabled = false;
                 btnPlay.Enabled = false;
-                //get two cards for dealer
 
-                //get two cards fro the player
-                Boolean winner = playBlackJack();
+                playBlackJack();
             }
 
 
@@ -56,7 +57,7 @@ namespace BlackJack
         }
 
 
-        public Boolean playBlackJack()
+        public void playBlackJack()
         {
             // Let the user play one game of Blackjack.
             // Return true if the user wins, false if the user loses.
@@ -64,8 +65,7 @@ namespace BlackJack
             pnlPlayerCards.Visible = true;
             pnlDealerCards.Visible = true;
 
-
-            
+                       
 
             //  Shuffle the deck, then deal two cards to each player. 
 
@@ -73,9 +73,14 @@ namespace BlackJack
             
             dealerHand.addCard(deck.dealCard());
             txtDealerCard1.Text = dealerHand.getCard(0).toString();
+
+            //generatePicture card
+            //pnlDealer.addPicture(dealerHand.getCard(0).imageString());
+         
             
             dealerHand.addCard(deck.dealCard());
-            txtDealerCard2.Text = dealerHand.getCard(1).toString();
+            txtDealerCard2.Text = "Hidden";
+               
                        
             playerHand.addCard(deck.dealCard());
             txtPlayerCard1.Text = playerHand.getCard(0).toString();
@@ -97,7 +102,7 @@ namespace BlackJack
                                            "Dealer has Blackjack.  In event of tie dealer wins.\n" +
                                            "Game Over. Thank you for Playing.");
                 this.Close();
-                return false;
+                playerWins =  false;
             }
 
             if (playerHand.getBlackjackValue() == 21)
@@ -109,135 +114,66 @@ namespace BlackJack
                                            "You have Blackjack. Congrats!!\n" +
                                            "Game Over. Thank you for Playing!");
                 this.Close();
-                return true;
+                dealerWins = false;
             }
 
-            checkStatus();
-
-            /// return true;
-
-            /*  If neither player has Blackjack, play the game.  First the user 
-                gets a chance to draw cards (i.e., to "Hit").  The while loop ends 
-                when the user chooses to "Stand".  If the user goes over 21,
-                the user loses immediately.
-            */
-
-
-            /* Display user's cards, and let user decide to Hit or Stand. */
-
-
-
-
-            //do
-            //{
-            //    userAction = scan.next().charAt(0);
-
-            //    if (userAction != 'H' && userAction != 'S')
-            //        System.out.println("Please respond H or S:  ");
-            //} while (userAction != 'H' && userAction != 'S');
-
-            ///* If the user Hits, the user gets a card.  If the user Stands,
-            //   the loop ends (and it's the dealer's turn to draw cards).
-            //*/
-
-            //if (userAction == 'S')
-            //{
-            //    // Loop ends; user is done taking cards.
-            //    break;
-            //}
-            //else
-            //{  // userAction is 'H'.  Give the user a card.  
-            //   // If the user goes over 21, the user loses.
-            //    Card newCard = deck.dealCard();
-            //    userHand.addCard(newCard);
-            //    System.out.println();
-            //    System.out.println("User hits.");
-            //    System.out.println("Your card is the " + newCard);
-            //    System.out.println("Your total is now " + userHand.getBlackjackValue());
-            //    if (userHand.getBlackjackValue() > 21)
-            //    {
-            //        System.out.println();
-            //        System.out.println("You busted by going over 21.  You lose.");
-            //        System.out.println("Dealer's other card was the "
-            //                                           + dealerHand.getCard(1));
-
-
-
-
-            return true;
-
-            //    /* If we get to this point, the user has Stood with 21 or less.  Now, it's
-            //       the dealer's chance to draw.  Dealer draws cards until the dealer's
-            //       total is > 16.  If dealer goes over 21, the dealer loses.
-            //    */
-
-            //    System.out.println();
-            //    System.out.println("User stands.");
-            //    System.out.println("Dealer's cards are");
-            //    System.out.println("    " + dealerHand.getCard(0));
-            //    System.out.println("    " + dealerHand.getCard(1));
-            //    while (dealerHand.getBlackjackValue() <= 16)
-            //    {
-            //        Card newCard = deck.dealCard();
-            //        System.out.println("Dealer hits and gets the " + newCard);
-            //        dealerHand.addCard(newCard);
-            //        if (dealerHand.getBlackjackValue() > 21)
-            //        {
-            //            System.out.println();
-            //            System.out.println("Dealer busted by going over 21.  You win.");
-            //            return true;
-            //        }
-            //    }
-            //    System.out.println("Dealer's total is " + dealerHand.getBlackjackValue());
-
-            //    /* If we get to this point, both players have 21 or less.  We
-            //       can determine the winner by comparing the values of their hands. */
-
-            //    System.out.println();
-            //    if (dealerHand.getBlackjackValue() == userHand.getBlackjackValue())
-            //    {
-            //        System.out.println("Dealer wins on a tie.  You lose.");
-            //        return false;
-            //    }
-            //    else if (dealerHand.getBlackjackValue() > userHand.getBlackjackValue())
-            //    {
-            //        System.out.println("Dealer wins, " + dealerHand.getBlackjackValue()
-            //                        + " points to " + userHand.getBlackjackValue() + ".");
-            //        return false;
-            //    }
-            //    else
-            //    {
-            //        System.out.println("You win, " + userHand.getBlackjackValue()
-            //                        + " points to " + dealerHand.getBlackjackValue() + ".");
-            //        return true;
-            //    }
-
-        }  // end playBlackjack()
-
-
-        public void checkStatus()
-        {
             StringBuilder status = new StringBuilder("Your cards are:");
             for (int i = 0; i < playerHand.getCardCount(); i++)
             {
                 status.Append("    " + playerHand.getCard(i).toString());
             }
             status.Append("\nYour total is " + playerHand.getBlackjackValue());
-            status.Append("\nDealer's cards are: ");
-            for (int i = 0; i < playerHand.getCardCount(); i++)
-            {
-                status.Append("    " + dealerHand.getCard(i).toString());
-            }
-            status.Append("\nDealer total is " + dealerHand.getBlackjackValue());
+            status.Append("\nDealer's is showing: ");
+            status.Append(dealerHand.getCard(0).toString());
             status.Append("\nHit or Stand?");
 
             MessageBox.Show(status.ToString());
-        }
+                                
+            
+
+        }  // end playBlackjack()
+
 
 
         private void btnStay_Click(object sender, EventArgs e)
         {
-
+           
+            MessageBox.Show("You decided to stay.\nDealer will now show all cards.");
+            //dealer turns over other cards
+            txtDealerCard2.Text = dealerHand.getCard(1).toString();
+            while (dealerHand.getBlackjackValue() < 17)
+            {
+                Card newCard = deck.dealCard();
+                //  StringBuilder dealerTurn = new StringBuilder();
+                MessageBox.Show("Dealer hits and gets the " + newCard.toString());
+                dealerHand.addCard(newCard);
+                if (dealerHand.getBlackjackValue() > 21)
+                {
+                    MessageBox.Show("Dealer busted by going over 21.  You win.");
+                   
+                }
+            }
+            MessageBox.Show("Dealer's total is " + dealerHand.getBlackjackValue());
+            if (dealerHand.getBlackjackValue() == playerHand.getBlackjackValue())
+            {
+                MessageBox.Show("Dealer wins on a tie.  You lose.");
+                dealerWins = true;
+                this.Close();
+            }
+            else if (dealerHand.getBlackjackValue() > playerHand.getBlackjackValue())
+            {
+                MessageBox.Show("Dealer wins, " + dealerHand.getBlackjackValue()
+                                + " points to " + playerHand.getBlackjackValue() + ".");
+                dealerWins = true;
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("You win, " + playerHand.getBlackjackValue()
+                                + " points to " + dealerHand.getBlackjackValue() + ".");
+                playerWins = true;
+                this.Close();
+            }
         }
 
         private void btnHit_Click_1(object sender, EventArgs e)
@@ -246,16 +182,23 @@ namespace BlackJack
             playerHand.addCard(newCard);
             txtPlayerCard3.Text = newCard.toString();
 
+
             StringBuilder hitMessage = new StringBuilder("You just just hit. " +
-                "\nYour card is the " + newCard +
-                "Your total is now " + playerHand.getBlackjackValue());
+                "\nYour new card is " + newCard.toString() +
+                "\nYour total is now " + playerHand.getBlackjackValue());
             if (playerHand.getBlackjackValue() > 21)
             {
-                hitMessage.Append("You busted by going over 21.  You lose.");
+                hitMessage.Append("\nYou busted by going over 21. You lose. \n");
                 hitMessage.Append("Dealer's other card was the "
                                                    + dealerHand.getCard(1).toString());
+                dealerWins = true;
+                this.Close();
             }
-
+            if(playerHand.getBlackjackValue() == 21)
+            {
+                MessageBox.Show("Congrats you will!");
+                playerWins = true;
+            }
             MessageBox.Show(hitMessage.ToString());
         }
     }
