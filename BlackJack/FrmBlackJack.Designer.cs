@@ -45,6 +45,11 @@
             this.txtPlayerCard3 = new System.Windows.Forms.TextBox();
             this.txtPlayerCard2 = new System.Windows.Forms.TextBox();
             this.txtPlayerCard1 = new System.Windows.Forms.TextBox();
+            this.lblMoney = new System.Windows.Forms.Label();
+            this.txtBet = new System.Windows.Forms.TextBox();
+            this.btnBet = new System.Windows.Forms.Button();
+            this.btnPlayAgain = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlDealerCards.SuspendLayout();
             this.pnlPlayerCards.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +68,7 @@
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(290, 110);
+            this.lblName.Location = new System.Drawing.Point(290, 95);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(132, 26);
             this.lblName.TabIndex = 1;
@@ -71,7 +76,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(428, 110);
+            this.txtName.Location = new System.Drawing.Point(428, 97);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(162, 26);
             this.txtName.TabIndex = 2;
@@ -79,7 +84,7 @@
             // btnPlay
             // 
             this.btnPlay.BackColor = System.Drawing.Color.Khaki;
-            this.btnPlay.Location = new System.Drawing.Point(682, 106);
+            this.btnPlay.Location = new System.Drawing.Point(682, 93);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(62, 35);
             this.btnPlay.TabIndex = 3;
@@ -113,7 +118,7 @@
             // 
             this.btnHit.BackColor = System.Drawing.Color.Gold;
             this.btnHit.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHit.Location = new System.Drawing.Point(134, 557);
+            this.btnHit.Location = new System.Drawing.Point(127, 575);
             this.btnHit.Name = "btnHit";
             this.btnHit.Size = new System.Drawing.Size(369, 46);
             this.btnHit.TabIndex = 6;
@@ -126,7 +131,7 @@
             // 
             this.btnStay.BackColor = System.Drawing.Color.Gold;
             this.btnStay.Font = new System.Drawing.Font("Trebuchet MS", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStay.Location = new System.Drawing.Point(523, 557);
+            this.btnStay.Location = new System.Drawing.Point(523, 575);
             this.btnStay.Name = "btnStay";
             this.btnStay.Size = new System.Drawing.Size(369, 46);
             this.btnStay.TabIndex = 8;
@@ -141,7 +146,7 @@
             this.pnlDealerCards.Controls.Add(this.txtDealerCard2);
             this.pnlDealerCards.Controls.Add(this.txtDealerCard1);
             this.pnlDealerCards.Controls.Add(this.dealerCard1);
-            this.pnlDealerCards.Location = new System.Drawing.Point(77, 245);
+            this.pnlDealerCards.Location = new System.Drawing.Point(77, 272);
             this.pnlDealerCards.Name = "pnlDealerCards";
             this.pnlDealerCards.Size = new System.Drawing.Size(395, 266);
             this.pnlDealerCards.TabIndex = 9;
@@ -181,7 +186,7 @@
             this.pnlPlayerCards.Controls.Add(this.txtPlayerCard3);
             this.pnlPlayerCards.Controls.Add(this.txtPlayerCard2);
             this.pnlPlayerCards.Controls.Add(this.txtPlayerCard1);
-            this.pnlPlayerCards.Location = new System.Drawing.Point(541, 245);
+            this.pnlPlayerCards.Location = new System.Drawing.Point(541, 272);
             this.pnlPlayerCards.Name = "pnlPlayerCards";
             this.pnlPlayerCards.Size = new System.Drawing.Size(395, 266);
             this.pnlPlayerCards.TabIndex = 10;
@@ -208,12 +213,75 @@
             this.txtPlayerCard1.Size = new System.Drawing.Size(217, 26);
             this.txtPlayerCard1.TabIndex = 3;
             // 
+            // lblMoney
+            // 
+            this.lblMoney.AutoSize = true;
+            this.lblMoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMoney.Location = new System.Drawing.Point(432, 142);
+            this.lblMoney.Name = "lblMoney";
+            this.lblMoney.Size = new System.Drawing.Size(128, 22);
+            this.lblMoney.TabIndex = 11;
+            this.lblMoney.Text = "Your Money: ";
+            this.lblMoney.Visible = false;
+            // 
+            // txtBet
+            // 
+            this.txtBet.Location = new System.Drawing.Point(445, 176);
+            this.txtBet.Name = "txtBet";
+            this.txtBet.Size = new System.Drawing.Size(104, 26);
+            this.txtBet.TabIndex = 12;
+            this.txtBet.Visible = false;
+            // 
+            // btnBet
+            // 
+            this.btnBet.BackColor = System.Drawing.Color.DimGray;
+            this.btnBet.ForeColor = System.Drawing.Color.White;
+            this.btnBet.Location = new System.Drawing.Point(428, 213);
+            this.btnBet.Name = "btnBet";
+            this.btnBet.Size = new System.Drawing.Size(132, 34);
+            this.btnBet.TabIndex = 13;
+            this.btnBet.Text = "Bet";
+            this.btnBet.UseVisualStyleBackColor = false;
+            this.btnBet.Visible = false;
+            this.btnBet.Click += new System.EventHandler(this.btnBet_Click);
+            // 
+            // btnPlayAgain
+            // 
+            this.btnPlayAgain.BackColor = System.Drawing.Color.DimGray;
+            this.btnPlayAgain.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPlayAgain.Location = new System.Drawing.Point(293, 647);
+            this.btnPlayAgain.Name = "btnPlayAgain";
+            this.btnPlayAgain.Size = new System.Drawing.Size(203, 37);
+            this.btnPlayAgain.TabIndex = 14;
+            this.btnPlayAgain.Text = "Play Again";
+            this.btnPlayAgain.UseVisualStyleBackColor = false;
+            this.btnPlayAgain.Visible = false;
+            this.btnPlayAgain.Click += new System.EventHandler(this.btnPlayAgain_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.DimGray;
+            this.btnClose.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnClose.Location = new System.Drawing.Point(523, 647);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(203, 37);
+            this.btnClose.TabIndex = 15;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Visible = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // FrmBlackJack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Green;
-            this.ClientSize = new System.Drawing.Size(1004, 625);
+            this.ClientSize = new System.Drawing.Size(1063, 722);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnPlayAgain);
+            this.Controls.Add(this.btnBet);
+            this.Controls.Add(this.txtBet);
+            this.Controls.Add(this.lblMoney);
             this.Controls.Add(this.pnlPlayerCards);
             this.Controls.Add(this.pnlDealerCards);
             this.Controls.Add(this.btnStay);
@@ -255,6 +323,11 @@
         private System.Windows.Forms.TextBox txtPlayerCard3;
         private System.Windows.Forms.TextBox txtPlayerCard2;
         private System.Windows.Forms.TextBox txtPlayerCard1;
+        private System.Windows.Forms.Label lblMoney;
+        private System.Windows.Forms.TextBox txtBet;
+        private System.Windows.Forms.Button btnBet;
+        private System.Windows.Forms.Button btnPlayAgain;
+        private System.Windows.Forms.Button btnClose;
     }
 }
 

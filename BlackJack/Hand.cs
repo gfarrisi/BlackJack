@@ -18,7 +18,7 @@ namespace BlackJack
         public void clear()
         {
             //remove all cards from hand
-            foreach (Card c in hand)
+            foreach (Card c in hand.ToList())
             {
                 hand.Remove(c);
             }
